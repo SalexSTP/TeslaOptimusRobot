@@ -226,13 +226,16 @@ img {
 
 /* Adjust container margins for smaller screens */
 @media (max-width: 1024px) {
-    .home-info, .design-features-info, .specs-features-info {
+    .design-features-info, .specs-features-info {
         margin: 0 5%;
         flex-wrap: wrap;
+        justify-content: center; /* Ensure content is centered */
     }
 
     .optimus-img, .tesla-img {
         margin: auto;
+        display: block; /* Ensure the images behave like block elements */
+        text-align: center; /* Center alignment */
     }
 
     .design-features-info div,
@@ -241,35 +244,45 @@ img {
     }
 
     img {
-        width: auto;
+        max-width: 100%; /* Ensure images don't overflow */
+        height: auto;
+        display: block; /* Center images properly */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
     }
 }
+
 
 /* For tablets and smaller screens */
 @media (max-width: 768px) {
     h1 {
-        font-size: 36px; /* Smaller header size */
+        font-size: 5vw; /* Adjusts based on screen width */
     }
 
     p {
-        font-size: 18px; /* Smaller paragraph text */
+        font-size: 4vw; /* Adjusts based on screen width */
     }
 
     .home-info,
     .design-features-info,
     .specs-features-info {
-        flex-direction: column;
+        display: block !important;
+        flex-direction: block;
         align-items: center;
+        text-align: center; /* Better alignment on smaller screens */
+        justify-content: center;
     }
 
     .manual-slideshow,
     .automatic-slideshow {
         width: 100%; /* Full-width slideshows */
         height: auto;
+        max-width: 100%; /* Ensure slideshow images fit the container */
     }
 
     img {
-        width: auto;
+        max-width: 100%; /* Ensure images don't overflow */
+        height: auto;
     }
 }
 
@@ -296,6 +309,76 @@ img {
     }
 
     img {
-        width: auto;
+        max-width: 100%; /* Ensure images don't overflow */
+        height: auto;
+    }
+}
+
+@media (max-width: 1665px) {
+    /* Adjust the container layout */
+    .home-info, .design-features-info, .specs-features-info {
+        margin: 0 10%; /* Add more space around the containers */
+        display: flex;
+        flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+        justify-content: space-between; /* Distribute space evenly */
+    }
+
+    /* Adjust images */
+    .optimus-img, .tesla-img {
+        width: 80%; /* Reduce image size slightly */
+        max-width: 600px; /* Ensure images don't grow too large */
+        margin: 20px auto; /* Center horizontally and add spacing */
+        display: block; /* Proper block behavior */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure images respect centering */
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 48px; /* Slightly smaller header size */
+    }
+
+    h2, h3 {
+        font-size: 36px; /* Adjust secondary headings */
+    }
+
+    /* Text */
+    p {
+        font-size: 20px; /* Slightly smaller paragraph size */
+        line-height: 1.6; /* Improve readability */
+    }
+
+    /* Slideshow */
+    .manual-slideshow, .automatic-slideshow {
+        width: 90%; /* Make slideshows take up more width */
+        max-width: 900px; /* Prevent overflow */
+        height: auto; /* Maintain aspect ratio */
+        margin: 20px auto; /* Center slideshows */
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 1.5rem; /* Add more padding */
+    }
+
+    .nav-link {
+        font-size: 1.25rem; /* Slightly larger navigation links */
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 1rem; /* Adjust footer text size */
+        text-align: center; /* Center footer text */
+        padding: 1.5rem;
+    }
+
+    /* Buttons */
+    .arrow-button {
+        padding: 10px 20px; /* Larger buttons */
+        font-size: 1rem; /* Adjust text size in buttons */
     }
 }
