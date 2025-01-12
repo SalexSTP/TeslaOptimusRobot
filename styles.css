@@ -52,7 +52,7 @@ p {
     font-size: 23px !important;
 }
 
-.home-info {
+.home-info-first {
     margin-top: 35px;
     margin-left: 200px;
     margin-right: 200px;
@@ -64,13 +64,36 @@ p {
     }
     
     .tesla-img {
-        width: 250px;
+        min-width: 250px;
         margin-right: 50px;
         border-radius: 10px;
     }
     
     .optimus-img {
         width: 250px;
+        margin-left: 50px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .optimus-img:hover {
+        transform: scale(1.2); /* Zooms the image by 10% */
+    }
+}
+
+.home-info-second {
+    margin-top: 35px;
+    margin-left: 200px;
+    margin-right: 200px;
+
+    display: flex !important;
+
+    .optimus-info {
+        align-self: center;
+    }
+    
+    .optimus-img {
+        min-width: 250px;
         margin-left: 50px;
         border-radius: 10px;
         transition: transform 0.3s ease;
@@ -316,18 +339,36 @@ img {
 
 @media (max-width: 1665px) {
     /* Adjust the container layout */
-    .home-info, .design-features-info, .specs-features-info {
+    .home-info-first, .home-info-second, .design-features-info, .specs-features-info {
         margin: 0 10%; /* Add more space around the containers */
         display: flex;
         flex-wrap: wrap; /* Allow content to wrap on smaller screens */
         justify-content: space-between; /* Distribute space evenly */
     }
 
+    .home-info-second {
+        margin-top: 10px !important;
+        flex-direction: column-reverse;
+    }
+
+    .tesla-img-container, .optimus-img-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tesla-img {
+        margin-right: 0px !important;
+        width: 80%; /* Reduce image size slightly */
+        max-width: 600px; /* Ensure images don't grow too large */
+        display: inline-block; /* Proper block behavior */
+    }
+
     /* Adjust images */
-    .optimus-img, .tesla-img {
+    .optimus-img {
         width: 80%; /* Reduce image size slightly */
         max-width: 600px; /* Ensure images don't grow too large */
         margin: 20px auto; /* Center horizontally and add spacing */
+        margin-left: 0px !important;
         display: block; /* Proper block behavior */
     }
 
